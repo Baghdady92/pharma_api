@@ -32,7 +32,7 @@ services:
     # path配下のDockerfile読み込み
     build: ./docker/api
     ports:
-      - "8000:8000"
+      - "5000:5000"
     volumes:
       - ./code:/usr/src/server
     networks:
