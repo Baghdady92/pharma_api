@@ -1,0 +1,15 @@
+CREATE TABLE user (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    age INT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE items (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    barcode VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
