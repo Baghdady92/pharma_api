@@ -20,6 +20,7 @@ class ItemsTable(Base):
     name = Column(String(255), nullable=False)
     category = Column(String(255), nullable=False)
     barcode = Column(String(255), nullable=False)
+    price = Column(String(255), nullable=False)
 
 
 # POSTやPUTのとき受け取るRequest Bodyのモデルを定義
@@ -34,6 +35,7 @@ class Item(BaseModel):
     name: str
     category: str
     barcode: str
+    price: str
 
 
 def main():

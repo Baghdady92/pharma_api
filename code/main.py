@@ -29,6 +29,24 @@ def read_items():
     return items
 
 
+@app.get("/items/barcode")
+def read_item(barcode: str):
+    item = session.query(ItemsTable).filter(ItemsTable.barcode == barcode).first()
+    return item
+
+
+@app.get("/items/name")
+def read_name(name: str):
+    item = session.query(ItemsTable).filter(ItemsTable.name == name).first()
+    return item
+
+
+@app.get("/items/company")
+def read_name(company: str):
+    item = session.query(ItemsTable).filter(ItemsTable.company == company).first()
+    return item
+
+
 # idにマッチするユーザ情報を取得 GET
 @app.get("/users/{user_id}")
 def read_user(user_id: int):
@@ -51,11 +69,12 @@ async def create_user(name: str, age: int):
 @app.post("/item")
 # クエリでnameとstrを受け取る
 # /user?name="三郎"&age=10
-async def create_item(name: str, barcode: str, category: str):
+async def create_item(name: str, barcode: str, category: str, price: str):
     item = ItemsTable()
     item.name = name
     item.category = category
     item.barcode = barcode
+    item.price = price
     session.add(item)
     session.commit()
 

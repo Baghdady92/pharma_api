@@ -10,6 +10,7 @@ CREATE TABLE items (
     name VARCHAR(255) NOT NULL,
     category VARCHAR(255) NOT NULL,
     barcode VARCHAR(255) NOT NULL,
+    price VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
