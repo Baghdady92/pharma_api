@@ -38,7 +38,7 @@ def read_item(barcode: str):
 @app.get("/items/name")
 def read_name(name: str):
     search = "%{}%".format(name)
-    item = session.query(ItemsTable).filter(ItemsTable.like(search)).first()
+    item = session.query(ItemsTable).filter(ItemsTable.like(search)).all()
     return item
 
 
